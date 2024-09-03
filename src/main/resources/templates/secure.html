@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+            margin-top: 0;
+        }
+        p {
+            margin: 10px 0;
+        }
+        strong {
+            color: #333;
+        }
+        .avatar {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .info {
+            background: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome, <span th:text="${username}">Username</span></h1>
+    <div class="info">
+        <h2>User Profile</h2>
+        <p><strong>User ID:</strong> <span th:text="${ID}">ID</span></p>
+        <p><strong>Avatar:</strong></p>
+        <img class="avatar" th:src="${avatarUrl}" alt="Avatar" style="width: 100px; height: 100px;">
+        <p><strong>Profile URL:</strong> <a th:href="${profileUrl}" target="_blank">GitHub Profile</a></p>
+        <p><strong>Public Repositories:</strong> <span th:text="${publicRepos}">0</span></p>
+        <p><strong>Public Gists:</strong> <span th:text="${publicGists}">0</span></p>
+        <p><strong>Followers:</strong> <span th:text="${followers}">0</span></p>
+        <p><strong>Following:</strong> <span th:text="${following}">0</span></p>
+        <p><strong>Account Created At:</strong> <span th:text="${createdAt}">August 5, 2024</span></p>
+        <p><strong>Account Updated At:</strong> <span th:text="${updatedAt}">August 28, 2024</span></p>
+    </div>
+</div>
+</body>
+</html>
